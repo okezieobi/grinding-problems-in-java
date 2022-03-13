@@ -29,7 +29,8 @@ Constraints:
 
 public class IsHappyNo {
     public boolean solution(int n) {
-        if (n < 1) return false;
+        if (n < 1)
+            return false;
         while (n > 9) {
             int sum = 0;
             while (n != 0) {
@@ -40,5 +41,17 @@ public class IsHappyNo {
             n = sum;
         }
         return n == 1 || n == 7;
+    }
+    
+    public boolean solutionTwo(int n) {
+         if (n < 1) return false;
+            int sum = 0;
+            while (n != 0) {
+                int digit = n % 10;
+                sum += digit * digit;
+                n /= 10;
+            }
+        if (sum > 9) return solutionTwo(sum);
+        return sum == 1 || sum == 7;
     }
 }
