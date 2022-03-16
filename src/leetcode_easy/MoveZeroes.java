@@ -21,6 +21,19 @@ Follow up: Could you minimize the total number of operations done?
 */
 
 public class MoveZeroes {
+    public void solutionTwo(int[] nums) {
+        int noneZeroIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[noneZeroIndex] = nums[i];
+                noneZeroIndex++;
+            }
+        }
+        for (int i = nums.length; i >= noneZeroIndex; i++) {
+            nums[i] = 0;
+        }
+    }
+
     public void solution(int[] nums) {
         int[] result = new int[nums.length];
         int countUp = 0;
