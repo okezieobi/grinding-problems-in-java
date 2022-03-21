@@ -27,5 +27,9 @@ haystack and needle consist of only lower-case English characters.
 */
 
 public class StrStr {
-    
+    public int solution(String haystack, String needle) {
+        if (needle.length() == 0)
+            return 0;
+        return haystack.indexOf(needle);
+    }
 }
