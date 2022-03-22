@@ -22,7 +22,7 @@ The number of nodes in the tree is in the range [0, 5000].
 -104 <= Node.val <= 104
 */
 
-  public class TreeNode {
+  class TreeNode {
       int val;
       TreeNode left;
       TreeNode right;
@@ -37,5 +37,22 @@ The number of nodes in the tree is in the range [0, 5000].
  
 
 public class isBalanced {
-    
+  boolean result = true;
+
+  int maxDepth(TreeNode root) {
+    if (root == null)
+      return 0;
+    int leftDepth = maxDepth(root.left);
+    int rightDepth = maxDepth(root.right);
+    if (Math.abs(leftDepth - rightDepth) > 1) {
+      result = false;
+      return 0;
+    }
+    return 1 + Math.max(leftDepth, rightDepth);
+  }
+
+  boolean solution(TreeNode root) {
+    maxDepth(root);
+    return result;
+  }
 }

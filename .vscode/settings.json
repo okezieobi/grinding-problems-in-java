@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "projects/src",
+        "projects/src/leetcode_easy",
+        "projects/src/leetcode_easy_2"
+    ]
+}
