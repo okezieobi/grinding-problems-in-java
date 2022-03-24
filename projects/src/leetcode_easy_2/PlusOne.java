@@ -48,9 +48,8 @@ public class PlusOne {
             }
             if (count_zero == 0) {
                 digits = new int[digits.length + 1];
-                digits[i] = 1;
+                digits[0] = 1;
             }
-            return digits;
         }
         return digits;
     }
